@@ -26,7 +26,7 @@ def predict_res(model_path, model_name, img_path1, img_path2, img_path3, img_pat
     with torch.no_grad():
         pred = torch.argmax(model(image1, image2, image3, image4), dim=-1).cpu().numpy()[0]
 
-    print(f"预测结果是:{label_names[pred]}")
+    print(f"The subtype prediction is:{label_names[pred]}")
 
     return label_names[pred]
 
